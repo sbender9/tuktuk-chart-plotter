@@ -172,7 +172,6 @@ function handleAisTargets({map, aisData, settings}) {
         aisMarkers[k] = vesselMarker
       }
       if (aisMarkers[k]) {
-        console.log(JSON.stringify(v))
         const name = _.get(v, 'name.value', 'Unknown')
         const formattedSog = numeral(sog).format('0.0')
         const formattedCog = numeral(course).format('0')
@@ -194,7 +193,6 @@ function handleAisTargets({map, aisData, settings}) {
         if ( draft ) {
           tooltip += `<div>Draft: ` + numeral(draft).format(0.0) + ` m</div>`
         }
-        console.log('tooltip: ' + tooltip)
         aisMarkers[k].bindTooltip(tooltip, {className: 'aisTooltip'})
         aisMarkers[k]._updatedAt = Date.now()
       }
